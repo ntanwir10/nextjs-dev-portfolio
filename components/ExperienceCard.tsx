@@ -29,12 +29,12 @@ function ExperienceCard({}: Props) {
           started with... - Ended..
         </p>
 
-        <ul className="list-disc space-y-4 ml-5 text-lg">
+        {/* <ul className="list-disc space-y-4 ml-5 text-lg">
           <li>summary points</li>
           <li>summary points</li>
           <li>summary points</li>
           <li>summary points</li>
-        </ul>
+        </ul> */}
       </div>
     </article>
   );

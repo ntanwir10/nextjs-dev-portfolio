@@ -18,7 +18,7 @@ function Projects({}: Props) {
         Projects
       </h3>
       <div className="relative top-12 w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80">
-        {projects.map((project, i) => (
+        {projects.map((project, i, key) => (
           <div className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20  md:p-44">
             <motion.img
               initial={{
@@ -42,11 +42,10 @@ function Projects({}: Props) {
               </h4>
 
               <p className="tex-lg text-center md:text-left">
-                It's a web app that is built using real-time data which is
-                flowing through a bunch of APIs. Users can sort through
-                different countries from the select dropdown option and they
-                also drag the Map and click on a country to check out it't covid
-                stats in real-time.
+                It's a web app built using real-time data flowing through a
+                bunch of APIs. Users can sort through different countries from
+                the select dropdown option and they also drag the Map and click
+                on a country to check out it's covid stats in real time.
               </p>
               <div className="flex justify-center">
                 <Link href="https://github.com" target="_blank">
