@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -19,7 +23,8 @@ function About({}: Props) {
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
-        src="https://avatars.githubusercontent.com/u/9935007?v=4"
+        src={urlFor(pageInfo?.profilePic).url()}
+        // src="https://avatars.githubusercontent.com/u/9935007?v=4"
         alt="nauman tanwir"
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[450px] xl:h-[550px] relative top-16"
       />
@@ -29,31 +34,7 @@ function About({}: Props) {
           <span className="underline decoration-[#f7ab0a]">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iure,
-          voluptate distinctio impedit doloremque excepturi consequatur
-          voluptatibus quam maiores, officiis placeat dolorem corporis at dolor
-          consectetur eveniet? Quisquam, tempora maiores. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Ullam iure, voluptate distinctio
-          impedit doloremque excepturi consequatur voluptatibus quam maiores,
-          officiis placeat dolorem corporis at dolor consectetur eveniet?
-          Quisquam, tempora maiores. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Ullam iure, voluptate distinctio impedit doloremque
-          excepturi consequatur voluptatibus quam maiores, officiis placeat
-          dolorem corporis at dolor consectetur eveniet? Quisquam, tempora
-          maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Ullam iure, voluptate distinctio impedit doloremque excepturi
-          consequatur voluptatibus quam maiores, officiis placeat dolorem
-          corporis at dolor consectetur eveniet? Quisquam, tempora maiores.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iure,
-          voluptate distinctio impedit doloremque excepturi consequatur
-          voluptatibus quam maiores, officiis placeat dolorem corporis at dolor
-          consectetur eveniet? Quisquam, tempora maiores. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Ullam iure, voluptate distinctio
-          impedit doloremque excepturi consequatur voluptatibus quam maiores,
-          officiis placeat dolorem corporis at dolor consectetur eveniet?
-          Quisquam, tempora maiores.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

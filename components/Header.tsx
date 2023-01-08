@@ -34,19 +34,6 @@ export default function Header({ socials }: Props) {
             target="_blank"
           />
         ))}
-        {/* <SocialIcon
-          url="https://github.com/ntanwir10"
-          fgColor="gray"
-          bgColor="transparent"
-          target="_blank"
-        />
-
-        <SocialIcon
-          url="https://www.linkedin.com/in/naumantanwir"
-          fgColor="gray"
-          bgColor="transparent"
-          target="_blank"
-        /> */}
       </motion.div>
       <motion.div
         initial={{ x: 500, opacity: 0, scale: 0.5 }}

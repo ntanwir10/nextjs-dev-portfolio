@@ -18,7 +18,7 @@ export default defineType({
     {
       name: 'heroImage',
       title: 'Image',
-      type: 'string',
+      type: 'image',
       options: {
         hotspot: true,
       },
@@ -26,7 +26,7 @@ export default defineType({
     {
       name: 'backgroundInformation',
       title: 'BackgroundInformation',
-      type: 'string',
+      type: 'text',
     },
     {
       name: 'profilePic',

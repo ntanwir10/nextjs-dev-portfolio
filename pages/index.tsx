@@ -33,22 +33,22 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <link rel="icon" href="/favicon-16x16.png" />
       </Head>
 
-      <Header socials = {socials}/>
+      <Header socials={socials} />
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero pageInfo={pageInfo} />
       </section>
 
       <section id="about" className="snap-center">
-        <About />
+        <About pageInfo={pageInfo} />
       </section>
-      <section id="experience" className="snap-center">
-        <WorkExperience />
-      </section>
+      {/* <section id="experience" className="snap-center">
+        <WorkExperience experiences={experiences} />
+      </section> */}
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills={skills} />
       </section>
       <section id="projects" className="snap-start">
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section id="contact" className="snap-start">
         <Contact />
@@ -58,7 +58,8 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
-              src="https://i.imgur.com/e2yvD6A.png"
+              // https://scontent.flko5-1.fna.fbcdn.net/v/t31.18172-8/258605_174345185960641_2216502_o.jpg?stp=c0.169.1536.1536a_dst-jpg_s851x315&_nc_cat=102&ccb=1-7&_nc_sid=da31f3&_nc_ohc=tsqrb6iZd2kAX9rxL7o&tn=r-gpQXaKy9bi75EC&_nc_ht=scontent.flko5-1.fna&oh=00_AfCxF8MfvFLqOBNwLo_zq8OabkpFSBkF454H5YcRKqJuJw&oe=63E2117E
+              src="https://scontent.flko5-1.fna.fbcdn.net/v/t1.18169-9/188592_441378919257265_1742674667_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=ITgZOowgClgAX-wMleA&_nc_ht=scontent.flko5-1.fna&oh=00_AfB3sVnxfKX6QrZbPfZpI0Cv_CZ_IOFExx4lLA72rgiDgQ&oe=63E2195F"
               alt=""
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
             />
@@ -91,6 +92,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
     // At most once every 30 secs
-    revalidate: 30,
+    revalidate: 20,
   };
 };
